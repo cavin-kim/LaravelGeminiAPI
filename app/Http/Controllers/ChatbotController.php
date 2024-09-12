@@ -12,7 +12,7 @@ class ChatbotController extends Controller
         $userMessage = $request->input('message');
         $response = Http::withHeaders([
             'Content-Type' => 'application/json',
-        ])->post('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=' . 'AIzaSyBj1m1rDupByhaapiJfhDVFs5PHlbtb02w', [
+        ])->post('https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=' . env('GEMINI_API_KEY'), [
             'contents' => [
                 [
                     'parts' => [
